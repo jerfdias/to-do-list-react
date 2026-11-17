@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { CirclePlus, X , Check , ClipboardList } from "lucide-react";
 import "./App.css";
 
@@ -8,7 +8,19 @@ import "./App.css";
 
 function App(){
   const[tarefa,setTarefa]=useState("");
-const[resultado,setResultado]=useState([]);
+const[resultado,setResultado]=useState(()=>{
+  const tarefaSalva = localStorage.getItem("tarefas");
+  return tarefaSalva
+      ? JSON.parse(tarefaSalva)
+      :[];
+});
+
+useEffect(()=> {
+  localStorage.setItem(
+    "tarefas",
+    JSON.stringify(resultado)
+  );
+},[resultado]);
 
 
   function addTarefa(){
