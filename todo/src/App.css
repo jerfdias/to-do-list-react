@@ -5,14 +5,16 @@
 
 }
 body{
+  width: 100%;
+  min-height: 100vh;
   background: #22C1C3;
 background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 0.53) 100%);
 }
 
 .principal{
+  
   width: 100%;
-  margin-top: auto;
-  height: 500px;
+  height: auto;
   flex-direction: column;
   
 
@@ -24,6 +26,7 @@ background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 0
   padding: 8px;
   cursor: pointer;
   border-style: none;
+  outline: none;
 
 }
 .add{
@@ -34,18 +37,20 @@ background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 0
   
 }
 .check{
+  
   background: none;
   border:none;
   cursor: pointer;
   background-color: rgb(4, 94, 4);
   border-radius: 20px;
   padding: 5px;
-  width: 30px;
+  width: 100px;
   height: 30px;
   margin-top:15px;
   
 }
 .excluir{
+  width: 100px;
   background: none;
   border:none;
   cursor: pointer;

@@ -30,6 +30,14 @@ useEffect(()=> {
     if(tarefa.trim() === ""){
       return;
     }
+    
+    const existe= resultado.some((item)=>
+    item.nome.toLowerCase() === tarefa.trim().toLocaleLowerCase()
+  );
+  if(existe){
+    alert ("escreva um item diferente");
+    return;
+  }
 
     
     //criar um objeto id e nome
@@ -90,7 +98,7 @@ return(
      <div className="resultado">
 
       {resultado.map((item)=>(
-        <div key={item.id}>{item.nome}
+        <div key={item.id}>
         <button className="excluir" onClick={() => excluirTarefa(item.id)}>< X /></button>
         <button className="check" onClick={() => ConcluirTarefa(item.id)}><Check /></button>
         <span className="tarefaConcluida" style={{
