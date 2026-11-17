@@ -32,7 +32,7 @@ useEffect(()=> {
     }
     
     const existe= resultado.some((item)=>
-    item.nome.toLowerCase() === tarefa.trim().toLocaleLowerCase()
+    item.nome.toLowerCase().trim() === tarefa.trim().toLocaleLowerCase()
   );
   if(existe){
     alert ("escreva um item diferente");
