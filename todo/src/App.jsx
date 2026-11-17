@@ -73,7 +73,7 @@ return(
 
  
   <div className="principal"> 
-    <h1>Todo list</h1>
+    <h1>Lista de compras</h1>
     <form onSubmit={(e)=>{
       e.preventDefault();
       addTarefa();
