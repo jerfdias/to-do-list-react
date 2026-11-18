@@ -72,7 +72,8 @@ useEffect(()=> {
     )
   };
 
-
+const totalTarefas=resultado.length;
+const totalConcluidas=resultado.filter((item)=>item.concluida === true).length;
   
 
 
@@ -95,10 +96,19 @@ return(
 
      <button type="submit" className="add"><CirclePlus/></button>
      </form>
+     <div className="total">
+      <h2 className="titulototal">Total de Itens</h2>
+      {totalTarefas}
+      </div>
+      <div className="totalConcluidas">
+      <h2 className="concluidas">Total de Itens comprados</h2>
+      {totalConcluidas}
+     </div>
+     
      <div className="resultado">
 
       {resultado.map((item)=>(
-        <div key={item.id}>
+        <div key={item.id} className="itens">
         <button className="excluir" onClick={() => excluirTarefa(item.id)}>< X /></button>
         <button className="check" onClick={() => ConcluirTarefa(item.id)}><Check /></button>
         <span className="tarefaConcluida" style={{
